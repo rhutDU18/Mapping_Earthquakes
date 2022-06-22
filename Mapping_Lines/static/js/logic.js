@@ -28,4 +28,3 @@ L.polyline(line, {
     color: "yellow"
 }).addTo(map);
 
-

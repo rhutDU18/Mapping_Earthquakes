@@ -31,4 +31,6 @@ cities.forEach(function(city) {
   console.log(city)
   L.marker(city.location).addTo(map);
 });
+
+streets.addTo(map);
   

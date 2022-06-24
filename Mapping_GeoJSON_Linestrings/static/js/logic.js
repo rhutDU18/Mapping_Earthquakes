@@ -27,8 +27,11 @@ let map = L.map('mapid', {
 // Pass our map layers into our layers control and add the layers control to the map.
 L.control.layers(baseMaps).addTo(map);
 
+// Accessing the airport GeoJSON URL
+let airportData = "https://raw.githubusercontent.com/RhutDU18/Mapping_Earthquakes/master/majorAirports.json";
+
 // Accessing the Toronto airline routes GeoJSON URL.
-let torontoData = "https://raw.githubusercontent.com/<GitHub_name>/Mapping_Earthquakes/main/torontoRoutes.json";
+let torontoData = "https://raw.githubusercontent.com/rhutDU18/Mapping_Earthquakes/Mapping_GeoJSON_Points/torontoRoutes.json";
 
 // Create a style for the lines.
 let myStyle = {
@@ -38,8 +41,9 @@ let myStyle = {
 
 // Grabbing our GeoJSON data.
 d3.json(torontoData).then(function(data) {
-    console.log(data);
+   console.log(data);
 // Creating a GeoJSON layer with the retrieved data.
+
 L.geoJson(data, {
     style: myStyle,
     onEachFeature: function(feature, layer) {
